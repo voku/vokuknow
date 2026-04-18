@@ -3,5 +3,5 @@ redaction_patterns:
   - password
   - token
 private_paths:
-  - .vokuknow/claims/private
+  - .vokuknow/memory/claims/private
 promotion_rule: private claims may be promoted to shared after explicit review and redaction

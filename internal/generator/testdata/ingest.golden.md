@@ -8,7 +8,7 @@ Goal for ingest
 
 ## Required steps
 1. Read .vokuknow/schema/AGENTS.md and relevant policy YAML.
-2. Inspect existing wiki claims, sources, and digests before changes.
+2. Inspect existing memory artifacts, sources, and digests before changes.
 3. Apply provenance requirements: source_ref, observed_at.
 4. Enforce contradiction resolution: prefer recent and authoritative.
 5. Enforce privacy boundary and redaction.

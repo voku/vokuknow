@@ -22,7 +22,7 @@ func testSchema() *schema.Schema {
 		SourcePolicies: schema.SourcePolicies{Authorities: []schema.Authority{{Name: "docs", Weight: 10}}},
 		Privacy: schema.PrivacyPolicies{
 			RedactionPatterns: []string{"token"},
-			PrivatePaths:      []string{".vokuknow/claims/private"},
+			PrivatePaths:      []string{".vokuknow/memory/claims/private"},
 			PromotionRule:     "manual",
 		},
 		PromptProfiles: map[string]schema.PromptProfile{

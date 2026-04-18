@@ -68,7 +68,7 @@ crystallization_required: true
 		"privacy_policies.yaml": `redaction_patterns:
   - token
 private_paths:
-  - .vokuknow/claims/private
+  - .vokuknow/memory/claims/private
 promotion_rule: explicit
 `,
 		"prompt_profiles.yaml": `profiles:

@@ -24,9 +24,16 @@ func Run(repoRoot string) Result {
 	requiredDirs := []string{
 		filepath.Join(repoRoot, config.RootDir, "schema"),
 		filepath.Join(repoRoot, config.RootDir, "skills"),
+		filepath.Join(repoRoot, config.RootDir, "skills", "vokuknow"),
 		filepath.Join(repoRoot, config.RootDir, "prompts"),
-		filepath.Join(repoRoot, config.RootDir, "claims", "shared"),
-		filepath.Join(repoRoot, config.RootDir, "claims", "private"),
+		filepath.Join(repoRoot, config.RootDir, "prompts", "examples"),
+		filepath.Join(repoRoot, config.RootDir, "policy"),
+		filepath.Join(repoRoot, config.RootDir, "templates"),
+		filepath.Join(repoRoot, config.RootDir, "memory", "discoveries"),
+		filepath.Join(repoRoot, config.RootDir, "memory", "claims"),
+		filepath.Join(repoRoot, config.RootDir, "memory", "claims", "private"),
+		filepath.Join(repoRoot, config.RootDir, "memory", "digests"),
+		filepath.Join(repoRoot, config.RootDir, "memory", "handoffs"),
 		filepath.Join(repoRoot, config.RootDir, "build"),
 	}
 	for _, dir := range requiredDirs {
@@ -44,8 +51,8 @@ func Run(repoRoot string) Result {
 	if len(s.ClaimPolicies.RequiredProvenanceFields) == 0 {
 		result.Errors = append(result.Errors, "missing provenance rules")
 	}
-	if !containsPath(s.Privacy.PrivatePaths, ".vokuknow/claims/private") {
-		result.Errors = append(result.Errors, "privacy policy must include .vokuknow/claims/private path")
+	if !containsPath(s.Privacy.PrivatePaths, ".vokuknow/memory/claims/private") {
+		result.Errors = append(result.Errors, "privacy policy must include .vokuknow/memory/claims/private path")
 	}
 
 	artifacts, err := generator.GenerateAll(repoRoot, s)

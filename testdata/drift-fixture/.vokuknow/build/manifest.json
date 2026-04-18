@@ -3,47 +3,47 @@
   "artifacts": [
     {
       "path": ".vokuknow/build/instructions.json",
-      "sha256": "4bea0359c3087481035c49d9f294170d83ae6007b86b95f47ec20b10dfb459de"
+      "sha256": "add08166a36fc68ba60d1dbf54bea2d36825be23e3d077460cd6841b7134f8ad"
     },
     {
       "path": ".vokuknow/prompts/crystallize.md",
-      "sha256": "497a0e1ffc6250cadc097b2721e2e04f525a13accc3d318c6ce10e07cc2d968f"
+      "sha256": "f5d3217f6cf682a07066ddf6df60a01724bad1e1d05258af1aa45067358320d6"
     },
     {
       "path": ".vokuknow/prompts/handoff.md",
-      "sha256": "cc5b42659a71f81851ba77df2919b058bc52591a79d4be41c7947b2f98fec5dd"
+      "sha256": "47c9c365712cfb8b79acfba52854c73b5f53c2c1e28c7ee658f72c3797a57f55"
     },
     {
       "path": ".vokuknow/prompts/ingest.md",
-      "sha256": "f7c1159c3f54756588b0aa93589c6b3bd8c3464f77dcc055501c2ca5feb31ac4"
+      "sha256": "de4be49a550da1895364953127803714b223349da5d9dabc52aaf5272bc5b444"
     },
     {
       "path": ".vokuknow/prompts/lint.md",
-      "sha256": "a7b36e3ce41a1ecb4031b97e60cef46c30ed2aa48e9a9a634ca5ac6dac81a41c"
+      "sha256": "08abb63eb6782f0f2bd82540a927f3a8de57b5e0206e17f98ab485110bd9f3e7"
     },
     {
       "path": ".vokuknow/prompts/query.md",
-      "sha256": "025fd10b2f025ef80351e652614d52247a5427c1b824bb7437e98f355abd5e00"
+      "sha256": "b1c512ac3e6812be059575c75a0a433f58930494e97adaeed626ca9145cf31c7"
     },
     {
       "path": ".vokuknow/prompts/resolve-claim.md",
-      "sha256": "afb7c530c7d89eee1cb421e3e2ec9c6325ba35719f803949273de34f761c11b3"
+      "sha256": "06d50cb0d9e2a79e06f0b1353e660f4ac68e8d0a937b76e011ff7b63fa1df436"
     },
     {
       "path": ".vokuknow/prompts/update-claim.md",
-      "sha256": "93175dedd85c610796d924c8f6e82be522d999b1c14252f8d106567c4de9c30f"
+      "sha256": "07006c0fbe12096e7d9bbb8c0693e91f0d0de02cd315464de61c3aca2d87e307"
     },
     {
       "path": ".vokuknow/skills/contradiction-resolver.md",
-      "sha256": "23c4b09d707d18ef11e97c81fe126f3ec16c0a3c01f305721820da44cefe7e20"
+      "sha256": "7d7d2ab2ba5d4fdea4ed573f2449a18908c2d8ecf34850d97c7acf6cba661752"
     },
     {
       "path": ".vokuknow/skills/crystallizer.md",
-      "sha256": "be3eb63a1c0ded4977feb2e91947687740dabc1ce10764c6b1308d1b32a8593a"
+      "sha256": "fd71213d1573bb64f2aecc93b95815be9a771cc216e21432154de7696f137618"
     },
     {
       "path": ".vokuknow/skills/wiki-operator.md",
-      "sha256": "bc8c34bb21070b07300b08eebb367f1153f1a910ebb073e3fcf270c0bbe0148b"
+      "sha256": "817be3c0699ae14b8c18dec16c56010b38196128766dcc9aa1fe81c083a2b0a8"
     }
   ]
 }
