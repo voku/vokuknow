@@ -1,0 +1,4 @@
+profiles:
+  default:
+    goal_template: "Generate deterministic workflow output for %s."
+    done_template: "%s updates are applied deterministically with provenance, privacy, and auditability preserved."

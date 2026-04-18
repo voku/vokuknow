@@ -36,3 +36,17 @@ GitHub Actions runs these checks on pushes to `main` and on pull requests:
 - `go test ./...`
 - `go test -race ./...`
 - CLI smoke checks via `init`, `build`, `lint`, and `doctor` against a temporary repo
+- generated-artifact drift check using `testdata/drift-fixture/`, `init`, `build`, and `git diff --exit-code`
+
+To reproduce the drift check locally:
+
+```bash
+fixture_repo=$(mktemp -d)
+cp -R testdata/drift-fixture/. "$fixture_repo"/
+git -C "$fixture_repo" init
+git -C "$fixture_repo" add .
+go run ./cmd/vokuknow --repo "$fixture_repo" init
+go run ./cmd/vokuknow --repo "$fixture_repo" build
+git -C "$fixture_repo" add -N .
+git -C "$fixture_repo" diff --exit-code
+```

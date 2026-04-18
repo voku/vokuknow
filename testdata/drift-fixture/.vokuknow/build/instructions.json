@@ -1,0 +1,94 @@
+{
+  "policies": {
+    "claims": {
+      "required_provenance_fields": [
+        "captured_by",
+        "confidence",
+        "observed_at",
+        "source_ref"
+      ],
+      "contradiction_strategy": "prefer newer authoritative claims with stronger observation support",
+      "update_rule": "update existing claim when scope and entity key match; create new claim when scope or key differs",
+      "crystallization_required": true
+    },
+    "privacy": {
+      "redaction_patterns": [
+        "api_key",
+        "password",
+        "token"
+      ],
+      "private_paths": [
+        ".vokuknow/claims/private"
+      ],
+      "promotion_rule": "private claims may be promoted to shared after explicit review and redaction"
+    },
+    "sources": {
+      "authorities": [
+        {
+          "name": "issue_discussion",
+          "weight": 60
+        },
+        {
+          "name": "official_docs",
+          "weight": 80
+        },
+        {
+          "name": "primary_repo",
+          "weight": 100
+        }
+      ]
+    }
+  },
+  "prompts": [
+    "ingest",
+    "query",
+    "update-claim",
+    "resolve-claim",
+    "crystallize",
+    "handoff",
+    "lint"
+  ],
+  "schema": {
+    "entity_types": [
+      {
+        "name": "claim",
+        "description": "Testable statement backed by observations"
+      },
+      {
+        "name": "digest",
+        "description": "Crystallized lesson from completed work"
+      },
+      {
+        "name": "observation",
+        "description": "Structured notes derived from sources"
+      },
+      {
+        "name": "source",
+        "description": "Raw or normalized input evidence"
+      }
+    ],
+    "relation_types": [
+      {
+        "name": "contradicts",
+        "description": "Two claims conflict"
+      },
+      {
+        "name": "derived_from",
+        "description": "Artifact was produced from an upstream artifact"
+      },
+      {
+        "name": "supersedes",
+        "description": "New claim replaces previous claim version"
+      },
+      {
+        "name": "supports",
+        "description": "Source or observation supports a claim"
+      }
+    ]
+  },
+  "skills": [
+    "wiki-operator",
+    "crystallizer",
+    "contradiction-resolver"
+  ]
+}

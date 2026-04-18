@@ -71,6 +71,19 @@ jobs:
           go run ./cmd/vokuknow --repo "$tmp_repo" lint
           go run ./cmd/vokuknow --repo "$tmp_repo" doctor
 
+      - name: Check generated artifact drift
+        run: |
+          fixture_repo=$(mktemp -d)
+          cp -R testdata/drift-fixture/. "$fixture_repo"/
+          git -C "$fixture_repo" init
+          git -C "$fixture_repo" config user.name ci
+          git -C "$fixture_repo" config user.email ci@example.com
+          git -C "$fixture_repo" add .
+          go run ./cmd/vokuknow --repo "$fixture_repo" init
+          go run ./cmd/vokuknow --repo "$fixture_repo" build
+          git -C "$fixture_repo" add -N .
+          git -C "$fixture_repo" diff --exit-code
+
   race:
     name: Race detector
     runs-on: ubuntu-latest
