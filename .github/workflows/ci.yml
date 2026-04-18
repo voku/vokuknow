@@ -73,6 +73,15 @@ jobs:
           go run ./cmd/vokuknow --repo "$tmp_repo" lint
           go run ./cmd/vokuknow --repo "$tmp_repo" doctor
 
+      - name: Run CLI smoke checks on a fresh Laravel install
+        run: |
+          fresh_repo=$(mktemp -d)
+          composer create-project laravel/laravel "$fresh_repo/app" --no-interaction --no-install --no-scripts
+          go run ./cmd/vokuknow --repo "$fresh_repo/app" init
+          go run ./cmd/vokuknow --repo "$fresh_repo/app" build
+          go run ./cmd/vokuknow --repo "$fresh_repo/app" lint
+          go run ./cmd/vokuknow --repo "$fresh_repo/app" doctor
+
       - name: Check generated artifact drift
         run: |
           fixture_repo=$(mktemp -d)
