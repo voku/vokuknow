@@ -13,6 +13,7 @@ It is designed to work with `vokuprompt`, which owns deterministic prompt compil
 - pattern composition
 - placeholder manifests
 - the generic execution contract
+- no repo-local memory store or hosted knowledge system
 
 ### `vokuknow` owns
 
@@ -23,7 +24,7 @@ It is designed to work with `vokuprompt`, which owns deterministic prompt compil
 - repo-local memory artifact conventions
 - optional thin helper tooling later if it proves necessary
 
-`vokuknow` is not a hosted memory system, vector database, graph platform, or new prompt compiler.
+`vokuknow` is not a vector database, graph platform, or new prompt compiler.
 
 ## Goal
 
@@ -97,4 +98,4 @@ If lightweight automation proves useful, `vokuknow` may later grow thin helper t
 - detect likely duplicates
 - flag secret-looking strings
 
-That tooling is secondary. The primary product is the content pack that forces durable, evidence-backed write-back.
+That tooling is secondary. The primary product is the memory toolkit that forces durable, evidence-backed write-back.
