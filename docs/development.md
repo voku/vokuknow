@@ -42,6 +42,16 @@ GitHub Actions runs these checks on pushes to `main` and on pull requests:
 
 Those smoke checks now validate the bootstrapped `.vokuknow/` memory toolkit layout as well as the generated schema-driven artifacts.
 
+## Releases
+
+Push a `v*` tag to trigger `.github/workflows/release.yml`.
+
+That workflow:
+
+- builds release archives for Linux, macOS, and Windows
+- publishes the archives plus `checksums.txt` to the matching GitHub release
+- keeps stable asset names such as `vokuknow_linux_amd64.tar.gz` so the README can use `releases/latest/download/...` links
+
 To reproduce the fresh Laravel smoke check locally:
 
 ```bash
