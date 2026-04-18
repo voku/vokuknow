@@ -10,7 +10,7 @@ Use this skill to capture durable repo-local memory after non-trivial discovery,
 - Always attach evidence paths for every durable claim.
 - Never save secrets, credentials, tokens, personal data, or other sensitive material.
 - Create a handoff when work is incomplete or another agent is likely to continue.
-- Treat `task complete + memory captured` as the real done condition.
+- Treat task complete + memory captured as the real done condition.
 
 ## What to capture
 
@@ -27,10 +27,10 @@ Do not save transient scratch notes, speculative summaries without evidence, or 
 
 ## Artifact selection
 
-- Use a **discovery** artifact after exploration or code reading.
-- Use a **claim** artifact for a durable statement that is supported by evidence.
-- Use a **digest** artifact after debugging or implementation clarifies a reusable lesson.
-- Use a **handoff** artifact when work is incomplete or continuation is likely.
+- Use a discovery artifact after exploration or code reading.
+- Use a claim artifact for a durable statement that is supported by evidence.
+- Use a digest artifact after debugging or implementation clarifies a reusable lesson.
+- Use a handoff artifact when work is incomplete or continuation is likely.
 
 ## Write-back rules
 

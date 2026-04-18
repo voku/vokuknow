@@ -8,7 +8,7 @@
         "source_ref"
       ],
       "contradiction_strategy": "prefer newer authoritative claims with stronger observation support",
-      "update_rule": "update existing claim when scope and entity key match; create new claim when scope or key differs",
+      "update_rule": "update existing memory when the code area or logical subsystem already has coverage; create new memory when the scope differs materially",
       "crystallization_required": true
     },
     "privacy": {
@@ -18,7 +18,7 @@
         "token"
       ],
       "private_paths": [
-        ".vokuknow/claims/private"
+        ".vokuknow/memory/claims/private"
       ],
       "promotion_rule": "private claims may be promoted to shared after explicit review and redaction"
     },
@@ -57,6 +57,14 @@
       {
         "name": "digest",
         "description": "Crystallized lesson from completed work"
+      },
+      {
+        "name": "discovery",
+        "description": "Durable learning from exploration that future agents should reuse"
+      },
+      {
+        "name": "handoff",
+        "description": "Continuation context for follow-up work"
       },
       {
         "name": "observation",

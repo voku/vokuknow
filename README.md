@@ -49,16 +49,22 @@ The toolkit enforces four things:
 - `prompts/examples/`: example memory-oriented prompt inputs
 - `examples/.vokuknow/memory/`: example repo-local memory artifacts
 
+The CLI bootstraps the matching skill, templates, policies, prompt examples, and memory directories into `.vokuknow/` when you run `vokuknow init`.
+
 ## Repo-local memory layout
 
 ```text
 .vokuknow/
+  policy/
+  prompts/examples/
+  skills/vokuknow/
+  templates/
   memory/
     discoveries/
     claims/
+      private/
     digests/
     handoffs/
-    open-questions/
 ```
 
 Keep the storage model file-based and local to the repository. Start with Markdown artifacts before adding any helper automation.

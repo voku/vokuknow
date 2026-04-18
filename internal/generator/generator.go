@@ -70,15 +70,17 @@ func GenerateSkill(name string, s *schema.Schema) ([]byte, error) {
 
 ## Repo locations
 - Schema: .vokuknow/schema/
-- Claims shared: .vokuknow/claims/shared/
-- Claims private: .vokuknow/claims/private/
+- Memory discoveries: .vokuknow/memory/discoveries/
+- Memory claims: .vokuknow/memory/claims/
+- Memory private claims: .vokuknow/memory/claims/private/
+- Memory digests: .vokuknow/memory/digests/
+- Memory handoffs: .vokuknow/memory/handoffs/
 - Sources raw: .vokuknow/sources/raw/
 - Sources normalized: .vokuknow/sources/normalized/
-- Digests: .vokuknow/digests/
 - Audit: .vokuknow/audit/
 
 ## Required workflow
-1. Inspect existing claims and sources before writing new claims.
+1. Inspect existing memory artifacts and sources before writing new claims or digests.
 2. Preserve provenance fields: {{.Provenance}}.
 3. Follow contradiction strategy: {{.Contradiction}}.
 4. Enforce private/shared boundary using private paths: {{.PrivatePaths}}.
@@ -124,7 +126,7 @@ func GeneratePrompt(name string, s *schema.Schema) ([]byte, error) {
 
 ## Required steps
 1. Read .vokuknow/schema/AGENTS.md and relevant policy YAML.
-2. Inspect existing wiki claims, sources, and digests before changes.
+2. Inspect existing memory artifacts, sources, and digests before changes.
 3. Apply provenance requirements: {{.Provenance}}.
 4. Enforce contradiction resolution: {{.Contradiction}}.
 5. Enforce privacy boundary and redaction.

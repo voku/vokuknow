@@ -5,5 +5,9 @@ entities:
     description: Structured notes derived from sources
   - name: claim
     description: Testable statement backed by observations
+  - name: discovery
+    description: Durable learning from exploration that future agents should reuse
   - name: digest
     description: Crystallized lesson from completed work
+  - name: handoff
+    description: Continuation context for follow-up work

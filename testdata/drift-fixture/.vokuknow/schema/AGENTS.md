@@ -1,10 +1,10 @@
 # AGENTS Contract
 
 ## Purpose
-This repository uses a local-first wiki contract to preserve durable, auditable engineering knowledge.
+This repository uses a local-first memory contract to preserve durable, auditable engineering knowledge.
 
 ## Operating rules
-- Use sources, observations, claims, and digests as separate knowledge layers.
+- Use sources, observations, claims, discoveries, digests, and handoffs as separate knowledge layers.
 - Every claim update must include provenance.
 - Shared and private knowledge must stay separated by policy.
 - Apply secret redaction and sensitive-data filtering before storage.

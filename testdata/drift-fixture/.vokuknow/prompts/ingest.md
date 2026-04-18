@@ -8,7 +8,7 @@ Generate deterministic workflow output for ingest.
 
 ## Required steps
 1. Read .vokuknow/schema/AGENTS.md and relevant policy YAML.
-2. Inspect existing wiki claims, sources, and digests before changes.
+2. Inspect existing memory artifacts, sources, and digests before changes.
 3. Apply provenance requirements: captured_by, confidence, observed_at, source_ref.
 4. Enforce contradiction resolution: prefer newer authoritative claims with stronger observation support.
 5. Enforce privacy boundary and redaction.

@@ -40,6 +40,8 @@ GitHub Actions runs these checks on pushes to `main` and on pull requests:
 - CLI smoke checks via `init`, `build`, `lint`, and `doctor` against a fresh Laravel install created with Composer
 - generated-artifact drift check using `testdata/drift-fixture/`, `init`, `build`, and `git diff --exit-code`
 
+Those smoke checks now validate the bootstrapped `.vokuknow/` memory toolkit layout as well as the generated schema-driven artifacts.
+
 To reproduce the fresh Laravel smoke check locally:
 
 ```bash

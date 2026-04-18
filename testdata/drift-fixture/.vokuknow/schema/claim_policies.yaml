@@ -4,5 +4,5 @@ required_provenance_fields:
   - captured_by
   - confidence
 contradiction_strategy: prefer newer authoritative claims with stronger observation support
-update_rule: update existing claim when scope and entity key match; create new claim when scope or key differs
+update_rule: update existing memory when the code area or logical subsystem already has coverage; create new memory when the scope differs materially
 crystallization_required: true
