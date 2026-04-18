@@ -1,11 +1,22 @@
 # Skills
 
-Generated skills live in `.vokuknow/skills/`.
+Generated schema-driven skills live in `.vokuknow/skills/`.
 
-Default skills:
+Default generated skills:
 
 - `wiki-operator.md`
 - `crystallizer.md`
 - `contradiction-resolver.md`
 
-Each skill includes purpose, workflow, quality rules, contradiction handling, privacy rules, crystallization, and anti-drift constraints.
+Bootstrapped memory skill:
+
+- `.vokuknow/skills/vokuknow/SKILL.md`
+
+The bootstrapped `vokuknow` skill now uses a workflow-first format inspired by agent skill packs such as `kepano/obsidian-skills`:
+
+- explicit workflow sections for discovery, debugging/implementation, and handoff
+- a validation checklist before finalizing write-back
+- clear privacy and anti-drift constraints
+- references to templates, policies, and memory store paths
+
+Generated skills remain deterministic and schema-derived; the `vokuknow` skill provides the practical operator workflow used during memory capture.
