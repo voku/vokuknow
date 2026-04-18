@@ -23,3 +23,16 @@ Current tests cover:
 - deterministic generation
 - golden markdown outputs
 - CLI init/build/lint path
+
+
+## CI
+
+GitHub Actions runs these checks on pushes to `main` and on pull requests:
+
+- `go mod tidy` drift check
+- `gofmt` formatting check
+- `go vet`
+- `staticcheck`
+- `go test ./...`
+- `go test -race ./...`
+- CLI smoke checks via `init`, `build`, `lint`, and `doctor` against a temporary repo
