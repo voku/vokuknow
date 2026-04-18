@@ -27,10 +27,10 @@ Do not save transient scratch notes, speculative summaries without evidence, or 
 
 ## Artifact selection
 
-- Use a **discovery** artifact after exploration or code reading.
-- Use a **claim** artifact for a durable statement that is supported by evidence.
-- Use a **digest** artifact after debugging or implementation clarifies a reusable lesson.
-- Use a **handoff** artifact when work is incomplete or continuation is likely.
+- Use a discovery artifact after exploration or code reading.
+- Use a claim artifact for a durable statement that is supported by evidence.
+- Use a digest artifact after debugging or implementation clarifies a reusable lesson.
+- Use a handoff artifact when work is incomplete or continuation is likely.
 
 ## Write-back rules
 

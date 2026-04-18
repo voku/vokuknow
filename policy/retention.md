@@ -8,7 +8,7 @@ When a discovery, claim, digest, or handoff already covers the same code area, u
 
 ## Supersede stale memory
 
-- mark outdated claims as `superseded`
+- mark outdated claims as superseded
 - refresh digests when the implementation has changed materially
 - remove or resolve handoffs once the continuation is complete
 
