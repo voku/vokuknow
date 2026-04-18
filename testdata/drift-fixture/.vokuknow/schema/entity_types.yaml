@@ -1,0 +1,9 @@
+entities:
+  - name: source
+    description: Raw or normalized input evidence
+  - name: observation
+    description: Structured notes derived from sources
+  - name: claim
+    description: Testable statement backed by observations
+  - name: digest
+    description: Crystallized lesson from completed work

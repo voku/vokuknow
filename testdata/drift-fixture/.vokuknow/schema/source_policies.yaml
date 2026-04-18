@@ -1,0 +1,7 @@
+authorities:
+  - name: primary_repo
+    weight: 100
+  - name: official_docs
+    weight: 80
+  - name: issue_discussion
+    weight: 60

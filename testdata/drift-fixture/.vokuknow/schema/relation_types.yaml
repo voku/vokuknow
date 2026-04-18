@@ -1,0 +1,9 @@
+relations:
+  - name: supports
+    description: Source or observation supports a claim
+  - name: contradicts
+    description: Two claims conflict
+  - name: derived_from
+    description: Artifact was produced from an upstream artifact
+  - name: supersedes
+    description: New claim replaces previous claim version

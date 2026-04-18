@@ -1,0 +1,7 @@
+redaction_patterns:
+  - api_key
+  - password
+  - token
+private_paths:
+  - .vokuknow/claims/private
+promotion_rule: private claims may be promoted to shared after explicit review and redaction

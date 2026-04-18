@@ -1,0 +1,105 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: Quality and tests (Go ${{ matrix.go-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        go-version:
+          - '1.22.12'
+          - 'stable'
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4.2.2
+
+      - name: Set up Go
+        uses: actions/setup-go@v6.4.0
+        with:
+          go-version: ${{ matrix.go-version }}
+          check-latest: true
+          cache: true
+
+      - name: Verify go.mod is tidy
+        run: |
+          go mod tidy
+          git diff --exit-code -- go.mod go.sum
+
+      - name: Check formatting
+        run: |
+          unformatted=$(gofmt -l .)
+          if [ -n "$unformatted" ]; then
+            echo "The following files are not gofmt formatted:"
+            echo "$unformatted"
+            exit 1
+          fi
+
+      - name: Run go vet
+        run: go vet ./...
+
+      - name: Run staticcheck
+        env:
+          GOTOOLCHAIN: auto
+        run: |
+          go install honnef.co/go/tools/cmd/staticcheck@2026.1
+          "$(go env GOPATH)/bin/staticcheck" ./...
+
+      - name: Run tests
+        run: go test ./...
+
+      - name: Build CLI
+        run: go build ./cmd/vokuknow
+
+      - name: Run CLI smoke checks
+        run: |
+          tmp_repo=$(mktemp -d)
+          go run ./cmd/vokuknow --repo "$tmp_repo" init
+          go run ./cmd/vokuknow --repo "$tmp_repo" build
+          go run ./cmd/vokuknow --repo "$tmp_repo" lint
+          go run ./cmd/vokuknow --repo "$tmp_repo" doctor
+
+      - name: Check generated artifact drift
+        run: |
+          fixture_repo=$(mktemp -d)
+          cp -R testdata/drift-fixture/. "$fixture_repo"/
+          git -C "$fixture_repo" init
+          git -C "$fixture_repo" config user.name ci
+          git -C "$fixture_repo" config user.email ci@example.com
+          git -C "$fixture_repo" add .
+          go run ./cmd/vokuknow --repo "$fixture_repo" init
+          go run ./cmd/vokuknow --repo "$fixture_repo" build
+          git -C "$fixture_repo" add -N .
+          git -C "$fixture_repo" diff --exit-code
+
+  race:
+    name: Race detector
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4.2.2
+
+      - name: Set up Go
+        uses: actions/setup-go@v6.4.0
+        with:
+          go-version-file: go.mod
+          check-latest: true
+          cache: true
+
+      - name: Run race tests
+        run: go test -race ./...
