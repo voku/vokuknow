@@ -44,13 +44,15 @@ Those smoke checks now validate the bootstrapped `.vokuknow/` memory toolkit lay
 
 ## Releases
 
-Push a `v*` tag to trigger `.github/workflows/release.yml`.
+Push a `v*` tag to trigger CI.
 
 That workflow:
 
 - builds release archives for Linux, macOS, and Windows
 - publishes the archives plus `checksums.txt` to the matching GitHub release
 - keeps stable asset names such as `vokuknow_linux_amd64.tar.gz` so the README can use `releases/latest/download/...` links
+
+After CI succeeds for the tagged commit, `.github/workflows/release.yml` runs automatically and publishes the release assets.
 
 To reproduce the fresh Laravel smoke check locally:
 
