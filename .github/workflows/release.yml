@@ -32,18 +32,40 @@ jobs:
             const owner = context.repo.owner;
             const repo = context.repo.repo;
             const headSha = context.payload.workflow_run.head_sha;
-            const refs = await github.paginate(github.rest.git.listMatchingRefs, {
-              owner,
-              repo,
-              ref: 'tags/v',
-            });
-            const match = refs.find((ref) => ref.object?.sha === headSha);
-            if (!match) {
+            let releaseTag = null;
+            let page = 1;
+
+            while (!releaseTag) {
+              const { data: tags } = await github.rest.repos.listTags({
+                owner,
+                repo,
+                per_page: 100,
+                page,
+              });
+
+              if (tags.length === 0) {
+                break;
+              }
+
+              const match = tags.find((tag) => tag.name.startsWith('v') && tag.commit?.sha === headSha);
+              if (match) {
+                releaseTag = match.name;
+                break;
+              }
+
+              if (tags.length < 100) {
+                break;
+              }
+
+              page += 1;
+            }
+
+            if (!releaseTag) {
               core.info('No version tag found for commit; skipping release.');
               core.setOutput('should-release', 'false');
               return;
             }
-            const releaseTag = match.ref.replace('refs/tags/', '');
+
             core.setOutput('should-release', 'true');
             core.setOutput('release-tag', releaseTag);
 
