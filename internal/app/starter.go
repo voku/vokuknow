@@ -13,6 +13,7 @@ This repository uses a local-first memory contract to preserve durable, auditabl
 - Shared and private knowledge must stay separated by policy.
 - Apply secret redaction and sensitive-data filtering before storage.
 - Keep an audit trail for edits, deletions, promotions, and contradiction resolutions.
+- Log every material self-directed decision in .vokuknow/audit/decision-log.md when docs, skills, or schema guidance is missing.
 - Resolve contradiction by preferring source recency, source authority, and supporting observations.
 - Human override is allowed, but default computed resolution must remain visible.
 - Crystallization is required after completed work to capture reusable lessons.
@@ -79,11 +80,26 @@ description: Capture durable repo-local memory after meaningful discovery, debug
 
 # vokuknow memory skill
 
-Use this skill when work created reusable learning that future agents should load before editing the same area.
+Use this skill when work created reusable learning that future agents should load before editing the same area, or when the current task exposes missing guidance that forced the agent to decide for itself.
 
 ## Core rule
 
 Treat task complete + memory captured as the real done condition for non-trivial work.
+
+If you must choose because the docs, skills, prompts, or schema do not say enough, log that blind spot immediately in .vokuknow/audit/decision-log.md.
+
+## Workflow: log blind spots during work
+
+1. Append an entry each time the agent must make a material decision without clear repo guidance.
+2. Record the code area, the decision made, why the decision was needed, and what guidance was missing.
+3. Add repo-local evidence paths so the gap can be reviewed later.
+4. Before finalizing, review each new entry and either close the guidance gap in docs, skills, or policy during the same task or leave a concrete follow-up note.
+5. Convert repeated or durable lessons from the log into memory artifacts when the task is complete.
+
+### What counts as a material decision
+
+- Log choices about ownership, invariants, safety boundaries, fallback behavior, or workflow when the repo does not define them clearly.
+- Do not log trivial style, wording, or formatting choices unless they expose a larger missing rule that will mislead future agents.
 
 ## Workflow: capture discovery memory
 
@@ -116,6 +132,8 @@ Treat task complete + memory captured as the real done condition for non-trivial
 - Memory content is durable and reusable, not scratch notes.
 - Existing artifact reuse was considered before creating a new file.
 - Every durable claim includes repo-local evidence paths.
+- Every material self-directed decision caused by missing guidance is logged in .vokuknow/audit/decision-log.md.
+- Every new decision-log entry either links to guidance updated in the same task or leaves a concrete follow-up.
 - Facts, hypotheses, and open questions are clearly separated.
 - Confidence is explicit.
 - No secrets, credentials, tokens, personal data, or sensitive literals are stored.
@@ -131,7 +149,56 @@ Treat task complete + memory captured as the real done condition for non-trivial
 
 - Templates: .vokuknow/templates/
 - Policy: .vokuknow/policy/
+- Audit log: .vokuknow/audit/decision-log.md
 - Memory store: .vokuknow/memory/
+`,
+		".vokuknow/templates/decision-entry.md": `# Decision entry: <short title>
+
+Use this for material choices about ownership, invariants, safety boundaries, fallback behavior, or workflow. Skip trivial style-only choices unless they reveal a broader missing rule.
+
+## Area
+<primary code area or subsystem>
+
+## Decision made
+<what the agent decided to do>
+
+## Why a decision was needed
+<what was ambiguous, undocumented, or missing>
+
+## Missing guidance
+<which doc, skill, policy, or schema rule should exist or be clarified>
+
+## Evidence
+- <repo-local path>
+- <repo-local path>
+
+## Follow-up
+<what guidance was updated now, or the concrete remaining follow-up if it could not be closed in this task>
+`,
+		".vokuknow/audit/decision-log.md": `# Decision log
+
+Append a new entry whenever the agent must make a material decision because repo guidance is missing or ambiguous.
+
+## Entry: <short title>
+
+### Area
+<primary code area or subsystem>
+
+### Decision made
+<what the agent decided to do>
+
+### Why a decision was needed
+<what was ambiguous, undocumented, or missing>
+
+### Missing guidance
+<which doc, skill, policy, or schema rule should be added or clarified>
+
+### Evidence
+- <repo-local path>
+- <repo-local path>
+
+### Follow-up
+<what should be documented, automated, or taught later>
 `,
 		".vokuknow/templates/discovery.md": `# Discovery: <short title>
 
@@ -220,7 +287,15 @@ Treat task complete + memory captured as the real done condition for non-trivial
 
 ## Purpose
 
-Memory artifacts exist to reduce repeated discovery and prevent future agents from making avoidable wrong assumptions.
+Memory artifacts exist to reduce repeated discovery, expose documentation blind spots, and prevent future agents from making avoidable wrong assumptions.
+
+## Log blind spots during work
+
+- if the agent must make a material decision because guidance is missing, append it to .vokuknow/audit/decision-log.md immediately
+- record what was decided, why the decision was needed, and which doc, skill, or policy should be improved
+- before finalizing, either update that missing guidance in the same task or leave a concrete follow-up in the log entry
+- turn repeated or durable blind spots into updated docs, skills, or memory artifacts once the task is complete
+- treat ownership, invariants, safety boundaries, fallback behavior, and workflow choices as material; ignore trivial style-only choices unless they reveal a bigger missing rule
 
 ## Save memory when
 
@@ -348,6 +423,27 @@ Use the implementation_learning category after a code change reveals new invaria
 ## Expected outcome
 
 Write a digest artifact that captures the reusable lesson created by the implementation work.
+`,
+		".vokuknow/prompts/examples/decision-log.md": `# Decision log
+
+Use this workflow when the agent has to choose an approach because the current docs, skills, or schema do not provide enough guidance.
+
+Log ownership, invariant, safety-boundary, fallback, or workflow choices. Skip trivial style-only choices unless they expose a broader missing rule.
+
+## Fill these inputs
+
+- CODE_AREA: src/Auth/SessionBootstrap.php
+- DECISION_TITLE: choose tenant-aware cookie source
+- DECISION_MADE: Used request context instead of global config as the source of truth for secure-cookie behavior.
+- WHY_DECISION_WAS_NEEDED: Existing docs explained secure cookies but did not define which component owned the final decision.
+- MISSING_GUIDANCE: Add a short ownership note to the auth/session documentation and the vokuknow skill checklist.
+- FOLLOW_UP: Update the ownership note in the auth/session docs during this task; if that cannot be completed now, leave the remaining doc work here explicitly.
+- EVIDENCE_PATHS: src/Auth/SessionBootstrap.php, src/Http/RequestContext.php, tests/Auth/SessionBootstrapTest.php
+- AUDIT_TARGET_FILE: .vokuknow/audit/decision-log.md
+
+## Expected outcome
+
+Append a structured decision entry that makes the blind spot visible before the task context is lost, then either fix the missing guidance in the same task or leave a concrete follow-up note.
 `,
 		".vokuknow/prompts/examples/debugging-digest.md": `# Debugging digest
 

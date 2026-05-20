@@ -85,8 +85,9 @@ func GenerateSkill(name string, s *schema.Schema) ([]byte, error) {
 3. Follow contradiction strategy: {{.Contradiction}}.
 4. Enforce private/shared boundary using private paths: {{.PrivatePaths}}.
 5. Apply redaction rules before storing: {{.Redaction}}.
-6. Append auditable entries for edits, promotions, deletions, and resolutions.
-7. Crystallize finished work into digests when complete.
+6. Log self-directed decisions and missing guidance in .vokuknow/audit/decision-log.md.
+7. Append auditable entries for edits, promotions, deletions, and resolutions.
+8. Crystallize finished work into digests when complete.
 
 ## Quality rules
 - Use deterministic language.
@@ -130,8 +131,9 @@ func GeneratePrompt(name string, s *schema.Schema) ([]byte, error) {
 3. Apply provenance requirements: {{.Provenance}}.
 4. Enforce contradiction resolution: {{.Contradiction}}.
 5. Enforce privacy boundary and redaction.
-6. Write auditable updates with deterministic formatting.
-7. If work is complete, crystallize reusable lessons into digests.
+6. If you must decide because docs or skills are insufficient, append an entry to .vokuknow/audit/decision-log.md and either update the missing guidance in the same task or leave a concrete follow-up in that entry.
+7. Write auditable updates with deterministic formatting.
+8. If work is complete, crystallize reusable lessons into digests.
 
 ## Constraints
 - Deterministic output only.
@@ -144,6 +146,7 @@ func GeneratePrompt(name string, s *schema.Schema) ([]byte, error) {
 
 ## Output expectations
 - Updated files under .vokuknow/ with clear diffs.
+- Decision-log updates when missing guidance forced a material choice, plus either same-task guidance updates or explicit follow-up notes.
 - Audit-safe edits with provenance.
 `
 	t := template.Must(template.New("prompt").Parse(tpl))

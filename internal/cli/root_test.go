@@ -22,8 +22,11 @@ func TestCLIInitBuildLint(t *testing.T) {
 	for _, path := range []string{
 		filepath.Join(repo, ".vokuknow", "skills", "vokuknow", "SKILL.md"),
 		filepath.Join(repo, ".vokuknow", "templates", "discovery.md"),
+		filepath.Join(repo, ".vokuknow", "templates", "decision-entry.md"),
 		filepath.Join(repo, ".vokuknow", "policy", "memory_rules.md"),
 		filepath.Join(repo, ".vokuknow", "prompts", "examples", "code-discovery.md"),
+		filepath.Join(repo, ".vokuknow", "prompts", "examples", "decision-log.md"),
+		filepath.Join(repo, ".vokuknow", "audit", "decision-log.md"),
 		filepath.Join(repo, ".vokuknow", "memory", "discoveries"),
 		filepath.Join(repo, ".vokuknow", "memory", "claims", "private"),
 		filepath.Join(repo, ".vokuknow", "memory", "digests"),
