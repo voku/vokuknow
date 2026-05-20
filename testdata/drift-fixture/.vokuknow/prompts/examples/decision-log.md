@@ -2,6 +2,8 @@
 
 Use this workflow when the agent has to choose an approach because the current docs, skills, or schema do not provide enough guidance.
 
+Log ownership, invariant, safety-boundary, fallback, or workflow choices. Skip trivial style-only choices unless they expose a broader missing rule.
+
 ## Fill these inputs
 
 - CODE_AREA: src/Auth/SessionBootstrap.php

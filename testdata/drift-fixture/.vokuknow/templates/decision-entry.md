@@ -1,5 +1,7 @@
 # Decision entry: <short title>
 
+Use this for material choices about ownership, invariants, safety boundaries, fallback behavior, or workflow. Skip trivial style-only choices unless they reveal a broader missing rule.
+
 ## Area
 <primary code area or subsystem>
 

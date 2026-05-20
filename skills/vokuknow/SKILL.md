@@ -20,6 +20,11 @@ If you must choose because the docs, skills, prompts, or schema do not say enoug
 3. Add repo-local evidence paths so the gap can be reviewed later.
 4. Convert repeated or durable lessons from the log into memory artifacts when the task is complete.
 
+### What counts as a material decision
+
+- Log choices about ownership, invariants, safety boundaries, fallback behavior, or workflow when the repo does not define them clearly.
+- Do not log trivial style, wording, or formatting choices unless they expose a larger missing rule that will mislead future agents.
+
 ## Workflow: capture discovery memory
 
 1. Review existing memory in the same code area before writing anything new.

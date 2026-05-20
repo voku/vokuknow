@@ -108,7 +108,7 @@ Keep the storage model file-based and local to the repository. Start with Markdo
 - `policy/`: guidance for memory quality, evidence, privacy, and retention
 - `prompts/examples/`: example memory-oriented prompt inputs
 - `audit/decision-log.md`: append-only record of guidance gaps that forced agent decisions
-- `examples/.vokuknow/memory/`: example repo-local memory artifacts
+- `examples/.vokuknow/`: worked example repo-local memory and audit artifacts
 
 ## Product boundary
 

@@ -95,6 +95,11 @@ If you must choose because the docs, skills, prompts, or schema do not say enoug
 3. Add repo-local evidence paths so the gap can be reviewed later.
 4. Convert repeated or durable lessons from the log into memory artifacts when the task is complete.
 
+### What counts as a material decision
+
+- Log choices about ownership, invariants, safety boundaries, fallback behavior, or workflow when the repo does not define them clearly.
+- Do not log trivial style, wording, or formatting choices unless they expose a larger missing rule that will mislead future agents.
+
 ## Workflow: capture discovery memory
 
 1. Review existing memory in the same code area before writing anything new.
@@ -146,6 +151,8 @@ If you must choose because the docs, skills, prompts, or schema do not say enoug
 - Memory store: .vokuknow/memory/
 `,
 		".vokuknow/templates/decision-entry.md": `# Decision entry: <short title>
+
+Use this for material choices about ownership, invariants, safety boundaries, fallback behavior, or workflow. Skip trivial style-only choices unless they reveal a broader missing rule.
 
 ## Area
 <primary code area or subsystem>
@@ -285,6 +292,7 @@ Memory artifacts exist to reduce repeated discovery, expose documentation blind 
 - if the agent must make a material decision because guidance is missing, append it to .vokuknow/audit/decision-log.md immediately
 - record what was decided, why the decision was needed, and which doc, skill, or policy should be improved
 - turn repeated or durable blind spots into updated docs, skills, or memory artifacts once the task is complete
+- treat ownership, invariants, safety boundaries, fallback behavior, and workflow choices as material; ignore trivial style-only choices unless they reveal a bigger missing rule
 
 ## Save memory when
 
@@ -416,6 +424,8 @@ Write a digest artifact that captures the reusable lesson created by the impleme
 		".vokuknow/prompts/examples/decision-log.md": `# Decision log
 
 Use this workflow when the agent has to choose an approach because the current docs, skills, or schema do not provide enough guidance.
+
+Log ownership, invariant, safety-boundary, fallback, or workflow choices. Skip trivial style-only choices unless they expose a broader missing rule.
 
 ## Fill these inputs
 
