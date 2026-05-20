@@ -45,3 +45,25 @@ The repository examples should include audit artifacts alongside memory artifact
 
 ### Follow-up
 Add or refresh worked audit examples whenever the decision-log workflow changes materially.
+
+## Entry: require explicit follow-up closure for blind spots
+
+### Area
+prompts/examples/decision-log.md
+
+### Decision made
+Required every decision-log entry to say whether the missing guidance was fixed in the same task or which concrete follow-up still remains.
+
+### Why a decision was needed
+Dogfooding showed that the prompt example asked for the blind spot itself but not for closure, which made it too easy to log a gap without improving the guidance or leaving a precise next step.
+
+### Missing guidance
+The skill, policy, prompt example, and generated prompts should all make closure explicit so the log drives repo improvements instead of becoming a dead-end audit trail.
+
+### Evidence
+- prompts/examples/decision-log.md
+- skills/vokuknow/SKILL.md
+- policy/memory_rules.md
+
+### Follow-up
+Keep the decision-log prompt and generated prompt expectations aligned so closure remains part of the workflow.

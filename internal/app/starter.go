@@ -93,7 +93,8 @@ If you must choose because the docs, skills, prompts, or schema do not say enoug
 1. Append an entry each time the agent must make a material decision without clear repo guidance.
 2. Record the code area, the decision made, why the decision was needed, and what guidance was missing.
 3. Add repo-local evidence paths so the gap can be reviewed later.
-4. Convert repeated or durable lessons from the log into memory artifacts when the task is complete.
+4. Before finalizing, review each new entry and either close the guidance gap in docs, skills, or policy during the same task or leave a concrete follow-up note.
+5. Convert repeated or durable lessons from the log into memory artifacts when the task is complete.
 
 ### What counts as a material decision
 
@@ -132,6 +133,7 @@ If you must choose because the docs, skills, prompts, or schema do not say enoug
 - Existing artifact reuse was considered before creating a new file.
 - Every durable claim includes repo-local evidence paths.
 - Every material self-directed decision caused by missing guidance is logged in .vokuknow/audit/decision-log.md.
+- Every new decision-log entry either links to guidance updated in the same task or leaves a concrete follow-up.
 - Facts, hypotheses, and open questions are clearly separated.
 - Confidence is explicit.
 - No secrets, credentials, tokens, personal data, or sensitive literals are stored.
@@ -171,7 +173,7 @@ Use this for material choices about ownership, invariants, safety boundaries, fa
 - <repo-local path>
 
 ## Follow-up
-<what should be documented, automated, or taught later>
+<what guidance was updated now, or the concrete remaining follow-up if it could not be closed in this task>
 `,
 		".vokuknow/audit/decision-log.md": `# Decision log
 
@@ -291,6 +293,7 @@ Memory artifacts exist to reduce repeated discovery, expose documentation blind 
 
 - if the agent must make a material decision because guidance is missing, append it to .vokuknow/audit/decision-log.md immediately
 - record what was decided, why the decision was needed, and which doc, skill, or policy should be improved
+- before finalizing, either update that missing guidance in the same task or leave a concrete follow-up in the log entry
 - turn repeated or durable blind spots into updated docs, skills, or memory artifacts once the task is complete
 - treat ownership, invariants, safety boundaries, fallback behavior, and workflow choices as material; ignore trivial style-only choices unless they reveal a bigger missing rule
 
@@ -434,12 +437,13 @@ Log ownership, invariant, safety-boundary, fallback, or workflow choices. Skip t
 - DECISION_MADE: Used request context instead of global config as the source of truth for secure-cookie behavior.
 - WHY_DECISION_WAS_NEEDED: Existing docs explained secure cookies but did not define which component owned the final decision.
 - MISSING_GUIDANCE: Add a short ownership note to the auth/session documentation and the vokuknow skill checklist.
+- FOLLOW_UP: Update the ownership note in the auth/session docs during this task; if that cannot be completed now, leave the remaining doc work here explicitly.
 - EVIDENCE_PATHS: src/Auth/SessionBootstrap.php, src/Http/RequestContext.php, tests/Auth/SessionBootstrapTest.php
 - AUDIT_TARGET_FILE: .vokuknow/audit/decision-log.md
 
 ## Expected outcome
 
-Append a structured decision entry that makes the blind spot visible before the task context is lost.
+Append a structured decision entry that makes the blind spot visible before the task context is lost, then either fix the missing guidance in the same task or leave a concrete follow-up note.
 `,
 		".vokuknow/prompts/examples/debugging-digest.md": `# Debugging digest
 

@@ -16,6 +16,7 @@ The bootstrapped `vokuknow` skill now uses a workflow-first format inspired by a
 
 - explicit workflow sections for discovery, debugging/implementation, and handoff
 - explicit blind-spot logging into `.vokuknow/audit/decision-log.md` when the agent has to decide for itself
+- explicit review of new decision-log entries so guidance is updated or a concrete follow-up is left behind
 - a validation checklist before finalizing write-back
 - clear privacy and anti-drift constraints
 - references to templates, policies, and memory store paths

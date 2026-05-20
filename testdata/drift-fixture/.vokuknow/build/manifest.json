@@ -7,31 +7,31 @@
     },
     {
       "path": ".vokuknow/prompts/crystallize.md",
-      "sha256": "d534b9fd1bc51b3f8e08c3ef9654b5a6188d759389e456e60789bbc067b813ba"
+      "sha256": "235fe4ffd2c709df3664c58dcbb7ea9411c72c1d29a29b7da73e8dc4ffde08a8"
     },
     {
       "path": ".vokuknow/prompts/handoff.md",
-      "sha256": "d8629aa164d0c2ba9bb546f7fb86ea110f99fc1119d97554fe9aca8fbc735cf7"
+      "sha256": "5d66b92d9de629c8b7743e843c06a13ba3e9a26e5afd2184d6dc650ba2a3c1fb"
     },
     {
       "path": ".vokuknow/prompts/ingest.md",
-      "sha256": "a372e9c93f7b0a22e59703b1d6728879b195de192f172d91bd02dc70c4352f32"
+      "sha256": "b60bcf4133132291a84ae3ad0d8900790ae45772e63b21fa84b725c4eddc4623"
     },
     {
       "path": ".vokuknow/prompts/lint.md",
-      "sha256": "48a14b42804921e2c957c3abc9fef750362cf869ee1fd286771a0ca15955e8db"
+      "sha256": "7e2b1b1a7b87700e2339f8299959160abba7f616f562dc575b8846018f70458e"
     },
     {
       "path": ".vokuknow/prompts/query.md",
-      "sha256": "7f291f4af6de6c1a25dc0cd9b0bdec303e3163f36d1ee9f01f0a9b7d865d8f58"
+      "sha256": "7c291443db3a0969ac469dbeafeba848cb9664cb6cf90565f80f4b666da96810"
     },
     {
       "path": ".vokuknow/prompts/resolve-claim.md",
-      "sha256": "ac96a01bff66c25099263f4908250a1577c95cac2e4de46b822f1909a77a194c"
+      "sha256": "e3b19277ee48b79abc7664a3944b0dca2ea5fe6b03996d7c6659792e61a4e623"
     },
     {
       "path": ".vokuknow/prompts/update-claim.md",
-      "sha256": "6016c205c2b3c8f047899810100745da2d1c3bd59cc975fe4920aef73ebb1935"
+      "sha256": "148a50efaca7604e669224665401a3accc3d83f4e6e4e951367199a1292b52ef"
     },
     {
       "path": ".vokuknow/skills/contradiction-resolver.md",

@@ -12,7 +12,7 @@ Generate deterministic workflow output for resolve-claim.
 3. Apply provenance requirements: captured_by, confidence, observed_at, source_ref.
 4. Enforce contradiction resolution: prefer newer authoritative claims with stronger observation support.
 5. Enforce privacy boundary and redaction.
-6. If you must decide because docs or skills are insufficient, append an entry to .vokuknow/audit/decision-log.md.
+6. If you must decide because docs or skills are insufficient, append an entry to .vokuknow/audit/decision-log.md and either update the missing guidance in the same task or leave a concrete follow-up in that entry.
 7. Write auditable updates with deterministic formatting.
 8. If work is complete, crystallize reusable lessons into digests.
 
@@ -27,5 +27,5 @@ resolve-claim updates are applied deterministically with provenance, privacy, an
 
 ## Output expectations
 - Updated files under .vokuknow/ with clear diffs.
-- Decision-log updates when missing guidance forced a material choice.
+- Decision-log updates when missing guidance forced a material choice, plus either same-task guidance updates or explicit follow-up notes.
 - Audit-safe edits with provenance.

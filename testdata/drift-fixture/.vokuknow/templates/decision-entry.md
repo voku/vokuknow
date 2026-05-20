@@ -19,4 +19,4 @@ Use this for material choices about ownership, invariants, safety boundaries, fa
 - <repo-local path>
 
 ## Follow-up
-<what should be documented, automated, or taught later>
+<what guidance was updated now, or the concrete remaining follow-up if it could not be closed in this task>

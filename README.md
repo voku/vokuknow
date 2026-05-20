@@ -88,10 +88,11 @@ Keep the storage model file-based and local to the repository. Start with Markdo
 1. Use `vokuprompt` to choose a task category.
 2. Do the actual discovery, debugging, refactoring, or implementation work.
 3. Log self-directed decisions in `.vokuknow/audit/decision-log.md` while work is in flight.
-4. Detect when durable learning happened.
-5. Run a memory-oriented prompt workflow.
-6. Save a structured artifact into `.vokuknow/memory/`.
-7. Load relevant artifacts before future work in the same area.
+4. Review new decision-log entries before finishing and either update the missing guidance now or leave a concrete follow-up.
+5. Detect when durable learning happened.
+6. Run a memory-oriented prompt workflow.
+7. Save a structured artifact into `.vokuknow/memory/`.
+8. Load relevant artifacts before future work in the same area.
 
 ## Artifact types
 
