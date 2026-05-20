@@ -5,11 +5,20 @@ description: Capture durable repo-local memory after meaningful discovery, debug
 
 # vokuknow memory skill
 
-Use this skill when work created reusable learning that future agents should load before editing the same area.
+Use this skill when work created reusable learning that future agents should load before editing the same area, or when the current task exposes missing guidance that forced the agent to decide for itself.
 
 ## Core rule
 
 Treat task complete + memory captured as the real done condition for non-trivial work.
+
+If you must choose because the docs, skills, prompts, or schema do not say enough, log that blind spot immediately in .vokuknow/audit/decision-log.md.
+
+## Workflow: log blind spots during work
+
+1. Append an entry each time the agent must make a material decision without clear repo guidance.
+2. Record the code area, the decision made, why the decision was needed, and what guidance was missing.
+3. Add repo-local evidence paths so the gap can be reviewed later.
+4. Convert repeated or durable lessons from the log into memory artifacts when the task is complete.
 
 ## Workflow: capture discovery memory
 
@@ -42,6 +51,7 @@ Treat task complete + memory captured as the real done condition for non-trivial
 - Memory content is durable and reusable, not scratch notes.
 - Existing artifact reuse was considered before creating a new file.
 - Every durable claim includes repo-local evidence paths.
+- Every material self-directed decision caused by missing guidance is logged in .vokuknow/audit/decision-log.md.
 - Facts, hypotheses, and open questions are clearly separated.
 - Confidence is explicit.
 - No secrets, credentials, tokens, personal data, or sensitive literals are stored.
@@ -57,4 +67,5 @@ Treat task complete + memory captured as the real done condition for non-trivial
 
 - Templates: .vokuknow/templates/
 - Policy: .vokuknow/policy/
+- Audit log: .vokuknow/audit/decision-log.md
 - Memory store: .vokuknow/memory/

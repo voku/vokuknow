@@ -20,8 +20,9 @@ Distill completed work into durable digests and reusable lessons.
 3. Follow contradiction strategy: prefer newer authoritative claims with stronger observation support.
 4. Enforce private/shared boundary using private paths: .vokuknow/memory/claims/private.
 5. Apply redaction rules before storing: api_key, password, token.
-6. Append auditable entries for edits, promotions, deletions, and resolutions.
-7. Crystallize finished work into digests when complete.
+6. Log self-directed decisions and missing guidance in .vokuknow/audit/decision-log.md.
+7. Append auditable entries for edits, promotions, deletions, and resolutions.
+8. Crystallize finished work into digests when complete.
 
 ## Quality rules
 - Use deterministic language.

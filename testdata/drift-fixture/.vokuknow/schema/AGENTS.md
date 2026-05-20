@@ -9,6 +9,7 @@ This repository uses a local-first memory contract to preserve durable, auditabl
 - Shared and private knowledge must stay separated by policy.
 - Apply secret redaction and sensitive-data filtering before storage.
 - Keep an audit trail for edits, deletions, promotions, and contradiction resolutions.
+- Log every material self-directed decision in .vokuknow/audit/decision-log.md when docs, skills, or schema guidance is missing.
 - Resolve contradiction by preferring source recency, source authority, and supporting observations.
 - Human override is allowed, but default computed resolution must remain visible.
 - Crystallization is required after completed work to capture reusable lessons.

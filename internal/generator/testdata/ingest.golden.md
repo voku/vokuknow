@@ -12,8 +12,9 @@ Goal for ingest
 3. Apply provenance requirements: source_ref, observed_at.
 4. Enforce contradiction resolution: prefer recent and authoritative.
 5. Enforce privacy boundary and redaction.
-6. Write auditable updates with deterministic formatting.
-7. If work is complete, crystallize reusable lessons into digests.
+6. If you must decide because docs or skills are insufficient, append an entry to .vokuknow/audit/decision-log.md.
+7. Write auditable updates with deterministic formatting.
+8. If work is complete, crystallize reusable lessons into digests.
 
 ## Constraints
 - Deterministic output only.
@@ -26,4 +27,5 @@ Done for ingest
 
 ## Output expectations
 - Updated files under .vokuknow/ with clear diffs.
+- Decision-log updates when missing guidance forced a material choice.
 - Audit-safe edits with provenance.

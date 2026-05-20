@@ -29,6 +29,7 @@ func Run(repoRoot string) Result {
 		filepath.Join(repoRoot, config.RootDir, "prompts", "examples"),
 		filepath.Join(repoRoot, config.RootDir, "policy"),
 		filepath.Join(repoRoot, config.RootDir, "templates"),
+		filepath.Join(repoRoot, config.RootDir, "audit"),
 		filepath.Join(repoRoot, config.RootDir, "memory", "discoveries"),
 		filepath.Join(repoRoot, config.RootDir, "memory", "claims"),
 		filepath.Join(repoRoot, config.RootDir, "memory", "claims", "private"),
