@@ -58,7 +58,7 @@ jobs:
         env:
           GOTOOLCHAIN: auto
         run: |
-          go install honnef.co/go/tools/cmd/staticcheck@2026.1
+          go install honnef.co/go/tools/cmd/staticcheck@2026.2.2
           "$(go env GOPATH)/bin/staticcheck" ./...
 
       - name: Run tests
